@@ -6,34 +6,14 @@ declare interface ITabsProps extends JSX.HTMLAttributes {
   'icon-tab-bar'?: boolean;
   'icons-with-text'?: boolean;
   activeTabIndex?: number;
+  scroller?: boolean;
 }
 export default class Tabs extends MaterialComponent<ITabsProps, {}> {
-  static TabBarScroller: typeof TabBarScroller;
-  static TabBarScrollerTabs: typeof TabBarScrollerTabs;
   static Tab: typeof Tab;
   static TabIconLabel: typeof TabIconLabel;
 
-  MDComponent: MDCTabBar;
+  MDComponent: MDCTabBar | MDCTabBarScroller;
 }
-
-declare interface ITabBarScrollerProps extends JSX.HTMLAttributes {
-  activeTabIndex?: number;
-}
-declare class TabBarScroller extends MaterialComponent<
-  ITabBarScrollerProps,
-  {}
-> {
-  MDComponent: MDCTabBarScroller;
-}
-
-declare interface ITabBarScrollerTabsProps extends JSX.HTMLAttributes {
-  'icon-tab-bar'?: boolean;
-  'icons-with-text'?: boolean;
-}
-declare class TabBarScrollerTabs extends MaterialComponent<
-  ITabBarScrollerTabsProps,
-  {}
-> {}
 
 interface ITabProps extends JSX.HTMLAttributes {
   active?: boolean;

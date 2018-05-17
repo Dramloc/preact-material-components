@@ -36,6 +36,10 @@ export default class TabsPage extends Component {
             name: 'activeTabIndex',
             description:
               'Sets the bottom bar of active tab, also please use `active` prop on tab.'
+          },
+          {
+            name: 'scroller',
+            description: 'Makes the tabs scrollable.'
           }
         ]
       },
@@ -45,29 +49,6 @@ export default class TabsPage extends Component {
           {
             name: 'active',
             description: 'Sets the tab active along with `activeTabIndex` prop.'
-          }
-        ]
-      },
-      {
-        component: 'TabBarScroller',
-        props: [
-          {
-            name: 'activeTabIndex',
-            description:
-              'Sets the bottom bar of active tab, also please use `active` prop on tab.'
-          }
-        ]
-      },
-      {
-        component: 'TabBarScrollerTabs',
-        props: [
-          {
-            name: 'icon-tab-bar',
-            description: 'Makes the tab bar accomodate icons.'
-          },
-          {
-            name: 'icons-with-text',
-            description: 'Makes the tab bar accomodate icons and label.'
           }
         ]
       }
@@ -137,21 +118,19 @@ export default class TabsPage extends Component {
           <code class="lang-js">{textTabsSample}</code>
         </CodeBlock>
         <div className="mdc-typography--title">Scrollable tabs </div>
-        <Tabs.TabBarScroller>
-          <Tabs.TabBarScrollerTabs>
-            <Tabs.Tab>tab1</Tabs.Tab>
-            <Tabs.Tab active={true}>tab2</Tabs.Tab>
-            <Tabs.Tab>tab3</Tabs.Tab>
-            <Tabs.Tab>tab4</Tabs.Tab>
-            <Tabs.Tab>tab5</Tabs.Tab>
-            <Tabs.Tab>tab6</Tabs.Tab>
-            <Tabs.Tab>tab7</Tabs.Tab>
-            <Tabs.Tab>tab7</Tabs.Tab>
-            <Tabs.Tab>tab9</Tabs.Tab>
-            <Tabs.Tab>tab10</Tabs.Tab>
-            <Tabs.Tab>tab11</Tabs.Tab>
-          </Tabs.TabBarScrollerTabs>
-        </Tabs.TabBarScroller>
+        <Tabs scroller={true}>
+          <Tabs.Tab>tab1</Tabs.Tab>
+          <Tabs.Tab active={true}>tab2</Tabs.Tab>
+          <Tabs.Tab>tab3</Tabs.Tab>
+          <Tabs.Tab>tab4</Tabs.Tab>
+          <Tabs.Tab>tab5</Tabs.Tab>
+          <Tabs.Tab>tab6</Tabs.Tab>
+          <Tabs.Tab>tab7</Tabs.Tab>
+          <Tabs.Tab>tab7</Tabs.Tab>
+          <Tabs.Tab>tab9</Tabs.Tab>
+          <Tabs.Tab>tab10</Tabs.Tab>
+          <Tabs.Tab>tab11</Tabs.Tab>
+        </Tabs>
         <CodeBlock>
           <code class="lang-js">{scrollableSample}</code>
         </CodeBlock>
